@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet"> 
+  <title>Fylo data storage component</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <section class="menu">
+      <img class="logo" src="./images/logo.svg" alt="Fylo logo">
+      <nav class="nav">
+        <ul class="nav__links">
+          <li><a href="#"><img src="./images/icon-document.svg" alt="document icon"></a></li>
+          <li><a href="#"><img src="./images/icon-folder.svg" alt="folder icon"></a></li>
+          <li><a href="#"><img src="./images/icon-upload.svg" alt="upload icon"></a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="storage">
+      <div class="storage__info">
+        <div class="storage__left">
+          <span class="storage__span--left"></span> GB Left
+        </div>
+        <div class="sotarge__details">
+          <p class="storage__used">
+            You’ve used <span class="storage__span--used"></span> <span>GB</span> of your storage
+          </p>
+          <div class="slider">
+            <div class="slider__inside"></div>
+          </div>
+          <div class="values">
+            <p class="value__min">0 GB</p>
+            <p class="value__max">1000 GB</p>
+          </div>        
+        </div>
+      </div>
+    </section>
+
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

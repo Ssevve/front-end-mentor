@@ -1,6 +1,6 @@
 # Frontend Mentor - Social proof section
 
-Designed by frontendmentor.io. Coded by me.
+Designed by [frontendmentor.io](https://www.frontendmentor.io). Coded by me.
 
 Made using mobile first approach.
 

@@ -1,0 +1,246 @@
+/**************************************
+              GLOBALS
+**************************************/
+
+:root {
+	/* Colors */
+	--clr-primary: hsl(300, 43%, 22%);
+	--clr-accent: hsl(333, 80%, 67%);
+	--clr-light-darker: hsl(303, 10%, 53%);
+	--clr-light: hsl(300, 24%, 96%);
+
+	/* Border radius */
+	--br--default: 10px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Spartan', sans-serif;
+	font-size: 0.9375rem;
+	background-image: url('./images/bg-pattern-top-mobile.svg'),
+		url('./images/bg-pattern-bottom-mobile.svg');
+	background-repeat: no-repeat, no-repeat;
+	background-position: top left, bottom right;
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+.container {
+	width: 90%;
+	max-width: 1150px;
+}
+
+h1,
+h5 {
+	line-height: 1;
+	color: var(--clr-primary);
+}
+
+/**************************************
+              TOP SECTION
+**************************************/
+
+.top {
+	text-align: center;
+	margin-bottom: 3rem;
+	margin-top: 4rem;
+}
+
+.header {
+	margin-bottom: 3rem;
+	display: grid;
+	place-items: center;
+}
+
+.header__title {
+	width: 80%;
+	max-width: 30.625rem;
+	font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.header__body,
+.ratings__card {
+	margin: 0 auto;
+}
+
+.header__body {
+	color: var(--clr-light-darker);
+	max-width: 35ch;
+	line-height: 1.5;
+	font-weight: 500;
+}
+
+.ratings__card {
+	background-color: var(--clr-light);
+	padding: 1em 0;
+	border-radius: var(--br--default);
+	max-width: 27.8125rem;
+}
+
+.ratings__card + .ratings__card {
+	margin-top: 1em;
+}
+
+.ratings__text {
+	margin-top: 1em;
+	margin-bottom: 0;
+}
+
+/**************************************
+            BOTTOM SECTION
+**************************************/
+
+.bottom {
+	padding-bottom: 6rem;
+}
+
+.testimonials {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.testimonials__card {
+	background-color: var(--clr-primary);
+	color: var(--clr-light);
+	padding: 2.5em 2em;
+	border-radius: var(--br--default);
+	max-width: 27.8125rem;
+}
+
+.testimonials__card + .testimonials__card {
+	margin-top: 1em;
+}
+
+.testimonials__details {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1.5em;
+}
+
+.testimonials__details * {
+	margin: 0;
+	font-size: 0.85rem;
+}
+
+.testimonials__figure {
+	margin: 0;
+	margin-right: 2em;
+}
+
+.testimonials__image {
+	--size: 2.8125rem;
+	width: var(--size);
+	height: var(--size);
+	border-radius: 50%;
+}
+
+.testimonials__name {
+	font-weight: 700;
+	margin-bottom: 0.5em;
+}
+
+.testimonials__verified {
+	color: var(--clr-accent);
+}
+
+.testimonials__quote {
+	line-height: 1.6;
+	font-size: 0.85rem;
+}
+
+/**************************************
+            MEDIA QUERIES
+**************************************/
+
+@media only screen and (min-width: 29.5em) {
+	.ratings__card {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.ratings__stars {
+		margin: 0 2.5em;
+	}
+
+	.ratings__text {
+		margin-top: 0;
+	}
+}
+
+@media only screen and (min-width: 48em) {
+	body {
+		background-image: url('./images/bg-pattern-top-desktop.svg'),
+			url('./images/bg-pattern-bottom-desktop.svg');
+	}
+}
+
+@media only screen and (min-width: 62.5em) {
+	.top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 5rem;
+	}
+
+	.header {
+		text-align: left;
+		margin-bottom: 0;
+		place-items: unset;
+	}
+
+	.header__title {
+		margin-bottom: 0.35em;
+	}
+
+	.header__title,
+	.header__body {
+		margin-left: 0;
+	}
+
+	.header__body {
+		max-width: 38ch;
+		margin-right: 4em;
+	}
+
+	.ratings {
+		flex-basis: 27.8125rem;
+	}
+
+	.ratings__card:first-of-type {
+		margin-left: -6em;
+	}
+
+	.ratings__card:nth-of-type(2) {
+		margin-left: -3em;
+	}
+
+	.testimonials {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.testimonials__card {
+		max-width: 22.8125rem;
+		margin: 0;
+	}
+
+	.testimonials__card + .testimonials__card {
+		margin-top: 0;
+		margin-left: 1.75em;
+	}
+
+	.testimonials__card:nth-of-type(2) {
+		margin-bottom: -3em;
+	}
+
+	.testimonials__card:last-of-type {
+		margin-bottom: -6em;
+	}
+}

@@ -36,6 +36,7 @@ body {
 	align-items: center;
 	padding: 0.55rem 0.8rem;
 	transition: background-color 250ms ease;
+	outline: none;
 }
 
 .btn:hover,

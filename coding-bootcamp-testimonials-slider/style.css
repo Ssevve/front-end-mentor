@@ -113,6 +113,11 @@ body {
 	text-align: center;
 }
 
+.quote,
+.person-name {
+	color: var(--dark-blue);
+}
+
 .quote {
 	font-size: clamp(1.1rem, 2.5vw, 2rem);
 	margin: 0 auto;

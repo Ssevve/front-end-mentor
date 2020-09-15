@@ -2,7 +2,7 @@ const testimonials = [
 	{
 		name: 'Tanya Sinclair',
 		position: 'UX Engineer',
-		image: 'image-tanya.jpg',
+		imageName: 'image-tanya',
 		quote: `I’ve been interested in coding for a while but never taken the jump,
 					  until now. I couldn’t recommend this course enough. I’m now in the job
 					  of my dreams and so excited about the future.`,
@@ -10,71 +10,34 @@ const testimonials = [
 	{
 		name: 'John Tarkpor',
 		position: 'Junior Front-end Developer',
-		image: 'image-john.jpg',
+		imageName: 'image-john',
 		quote: `If you want to lay the best foundation possible I’d recommend taking this course. 
             The depth the instructors go into is incredible. I now feel so confident about 
             starting up as a professional developer.`,
 	},
 ];
 
-const container = document.querySelector('.container');
+function changeTestimonial(testimonial) {
+	const { name, position, imageName, quote } = testimonial;
 
-function showTestimonial(testimonial) {
-	const { name, position, image, quote } = testimonial;
-
-	const markup = `
-    <div class="top">
-      <img
-        class="person-image"
-        src="./images/${image}"
-        alt="${name}"
-      />
-      <div class="slider">
-        <button class="btn" data-goto="previous">
-          <img class="arrow" src="./images/icon-prev.svg" alt="Previous testimonial" data-goto="previous" />
-        </button>
-        <button class="btn"  data-goto="next">
-          <img class="arrow" src="./images/icon-next.svg" alt="Next testimonial" data-goto="next" />
-        </button>
-        </div>
-    </div>
-
-    <div class="bottom">
-      <p class="quote">
-        “ ${quote} ”
-      </p>
-
-      <p class="person-name">${name}</p>
-      <p class="person-position">${position}</p>
-    </div>
-  `;
-
-	container.insertAdjacentHTML('afterbegin', markup);
+	document.querySelector('.quote').textContent = `“ ${quote} ”`;
+	document.querySelector('.person-name').textContent = name;
+	document.querySelector('.person-position').textContent = position;
+	document.querySelector('.person-image').src = `./images/${imageName}.jpg`;
 }
-
-function clearTestimonial() {
-	container.innerHTML = '';
-}
-
-container.addEventListener('click', (e) => {
-	if (e.target.matches('.btn, .btn *')) {
-		const type = e.target.dataset.goto;
-
-		switch (type) {
-			case 'previous':
-				slide -= 1;
-				slide < 0 ? (slide = testimonials.length - 1) : (slide = slide);
-				break;
-			case 'next':
-				slide += 1;
-				slide >= testimonials.length ? (slide = 0) : (slide = slide);
-				break;
-		}
-
-		clearTestimonial();
-		showTestimonial(testimonials[slide]);
-	}
-});
 
 let slide = 0;
-showTestimonial(testimonials[slide]);
+document.querySelector('.slider').addEventListener('click', (e) => {
+	const type = e.target.closest('.btn').dataset.goto;
+
+	switch (type) {
+		case 'previous':
+			slide === 0 ? (slide = testimonials.length - 1) : slide--;
+			break;
+		case 'next':
+			slide === testimonials.length - 1 ? (slide = 0) : slide++;
+			break;
+	}
+
+	changeTestimonial(testimonials[slide]);
+});

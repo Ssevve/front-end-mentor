@@ -1,4 +1,4 @@
-# Frontend Mentor - Bootcamp testimonial slider
+# Frontend Mentor - Coding bootcamp testimonial slider
 
 Designed by [frontendmentor.io](https://www.frontendmentor.io). Coded by me.
 

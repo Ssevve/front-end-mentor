@@ -10,4 +10,3 @@ Live demo [here](https://agitated-mclean-872393.netlify.app/).
 
 - HTML5
 - CSS3
-- JavaScript

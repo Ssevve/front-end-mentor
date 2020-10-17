@@ -3,11 +3,38 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
-		<link rel="stylesheet" href="style.css" />
 		<title>Base Apparel coming soon page</title>
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		We're coming soon Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals. Email Address
+		<div class="wrapper">
+
+			<header class="header">
+				<div class="container flex">
+						<img class="header__logo" src="./images/logo.svg" alt="Base Apparel">
+				</div>
+			</header>
+
+			<div class="hero-mobile"></div>
+			
+			<main class="main">
+				<div class="container">
+					<h1 class="main__title">We're <span class="dark">coming soon</span></h1>
+					<p class="main__body">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+					<form class="form flex" novalidate>
+						<input class="form__input" type="email"  autocomplete="off" placeholder="Email Address" aria-label="Email Adress" required>
+						<img class="error-icon hidden" src="./images/icon-error.svg" alt="error">
+						<button class="form__btn flex" type="submit" aria-label="subscribe"><img src="./images/icon-arrow.svg" alt=""></button>
+						<span class="error-message hidden" aria-live="polite">Please provide a valid email</span>
+					</form>
+				</div>
+			</main>
+		
+		</div>
+		<div class="hero-desktop"></div>
+	
+		<script src="./script.js"></script>
 	</body>
 </html>

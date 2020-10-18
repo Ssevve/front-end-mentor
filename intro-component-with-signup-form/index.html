@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intro component with sign up form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <div class="flex-container">
+
+    <div class="text-column">
+      <h1 class="title">Learn to code by watching others</h1>
+      <p class="subtitle">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+        but understanding how developers think is invaluable.</p>
+    </div>
+
+    <div class="form-column">
+      <div class="offer">
+        <p class="offer__text"><span class="bold-text">Try it free 7 days</span> then $20/mo. thereafter</p>
+      </div>
+
+      <form class="form" id="form">
+        <div class="form__field">
+          <input class="form__input" id="first-name" type="text" placeholder="First Name" aria-label="first name">
+          <img class="form__icon" src="./images/icon-error.svg" alt="">
+          <small class="form__message" aria-live="polite">Error message</small>
+        </div>
+
+        <div class="form__field">
+          <input class="form__input" id="last-name" type="text" placeholder="Last Name" aria-label="last name">
+          <img class="form__icon" src="./images/icon-error.svg" alt="">
+          <small class="form__message" aria-live="polite">Error message</small>
+        </div>
+
+        <div class="form__field">
+          <input class="form__input" id="email" type="text" placeholder="Email Address" aria-label="email">
+          <img class="form__icon" src="./images/icon-error.svg" alt="">
+          <small class="form__message" aria-live="polite">Error message</small>
+        </div>
+
+        <div class="form__field">
+          <input class="form__input" id="password" type="password" placeholder="Password" aria-label="password" autocomplete="off">
+          <img class="form__icon" src="./images/icon-error.svg" alt="">
+          <small class="form__message" aria-live="polite">Error message</small>
+        </div>
+        <button class="form__btn" type="submit" aria-label="claim your free trial">Claim your free trial</button>
+        <small class="terms" >By clicking the button, you are agreeing to our 
+          <a class="terms__link" href="#">Terms and Services</a>
+        </small> 
+      </form>
+
+    </div>
+  </div>
+  
+  <script src="./validator.js"></script>
+</body>
+</html>

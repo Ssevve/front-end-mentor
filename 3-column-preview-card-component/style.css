@@ -1,0 +1,121 @@
+:root {
+  --bg-card-1: hsl(31, 77%, 52%);
+  --bg-card-2: hsl(184, 100%, 22%);
+  --bg-card-3: hsl(179, 100%, 13%);
+
+  --clr-headings: hsl(0, 0%, 95%);
+  --clr-paragraphs: hsla(0, 0%, 100%, 0.75);
+
+  --ff-headings: 'Big Shoulders Display', cursive;
+  --ff-paragraphs: 'Lexend Deca', sans-serif;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 5rem 1.5rem;
+  min-height: 100vh;
+  background-color: var(--clr-headings);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__row {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card__row--sedans {
+  background-color: var(--bg-card-1);
+}
+
+.card__row--suvs {
+  background-color: var(--bg-card-2);
+}
+
+.card__row--luxury {
+  background-color: var(--bg-card-3);
+}
+
+.card__icon {
+  align-self: flex-start;
+}
+
+.card__heading {
+  color: var(--clr-headings);
+  font-family: var(--ff-headings);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+.card__paragraph {
+  color: var(--clr-paragraphs);
+  font-family: var(--ff-paragraphs);
+  font-size: clamp(0.9375rem, 1.25vw, 1rem);
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  max-width: 445px;
+}
+
+.card__button {
+  display: inline-block;
+  cursor: pointer;
+  align-self: flex-start;
+  font-family: var(--ff-paragraphs);
+  text-decoration: none;
+  text-transform: capitalize;
+  background-color: var(--clr-headings);
+  border: 2px solid var(--clr-headings);
+  border-radius: 100px;
+  padding: 0.75rem 2rem;
+}
+
+.card__row--sedans .card__button {
+  color: var(--bg-card-1);
+}
+
+.card__row--suvs .card__button {
+  color: var(--bg-card-2);
+}
+
+.card__row--luxury .card__button {
+  color: var(--bg-card-3);
+}
+
+@media screen and (min-width: 825px) {
+  .card {
+    flex-direction: row;
+    max-width: 950px;
+  }
+
+  .card__paragraph {
+    margin-bottom: 5.5rem;
+  }
+
+  .card__button:hover {
+    background-color: transparent;
+    color: var(--clr-headings);
+    transition: all 100ms ease-in;
+  }
+}
